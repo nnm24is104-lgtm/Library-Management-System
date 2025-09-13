@@ -1,0 +1,14 @@
+public class LibraryDemo { 
+    public static void main(String[] args) { 
+        Book firstVolume = new Book("Effective Java", "Joshua Bloch", "JB101"); 
+        TextBook mathText = new TextBook("Linear Algebra", "Gilbert Strang", "GS202", 
+"Mathematics"); 
+ 
+        System.out.println("Currently available? " + firstVolume.isReady()); 
+        firstVolume.borrowItem(); 
+        System.out.println("Currently available? " + firstVolume.isReady()); 
+        firstVolume.returnItem(); 
+        System.out.println(mathText.getName() + " covers: " + mathText.getTopic()); 
+    } 
+} 
+ 
