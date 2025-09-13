@@ -1,0 +1,27 @@
+package tests;
+import org.junit.jupiter.api.Test; 
+import static org.junit.jupiter.api.Assertions.*; 
+ 
+public class BookTests { 
+    @Test 
+    public void borrowMakesBookUnavailable() { 
+        Book book = new Book("Effective Java", "Joshua Bloch", "JB101"); 
+        book.borrowItem(); 
+        assertFalse(book.isReady()); 
+    } 
+ 
+    @Test 
+    public void returnMakesBookAvailable() { 
+        Book book = new Book("Effective Java", "Joshua Bloch", "JB101"); 
+        book.borrowItem(); 
+        book.returnItem(); 
+        assertTrue(book.isReady()); 
+    } 
+ 
+    @Test 
+    public void bookInitializedAvailable() { 
+        Book book = new Book("Effective Java", "Joshua Bloch", "JB101"); 
+        assertTrue(book.isReady()); 
+    } 
+} 
+ 
