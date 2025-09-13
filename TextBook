@@ -1,0 +1,12 @@
+public class TextBook extends Book { 
+    private String topic; 
+ 
+    public TextBook(String name, String creator, String code, String topic) { 
+        super(name, creator, code); 
+        this.topic = topic; 
+    } 
+ 
+    public String getTopic() { 
+        return topic; 
+    } 
+} 
