@@ -1,0 +1,48 @@
+package library
+public class Book implements Borrowable { 
+    private String name; 
+    private String creator; 
+    private String code; 
+    private boolean isOnShelf; 
+ 
+    public Book(String name, String creator, String code) { 
+        this.name = name; 
+        this.creator = creator; 
+        this.code = code; 
+        this.isOnShelf = true; 
+    } 
+ 
+    @Override 
+    public void borrowItem() { 
+        if (isOnShelf) { 
+            isOnShelf = false; 
+            System.out.println(name + " is now checked out."); 
+        } else { 
+            System.out.println(name + " can't be borrowed at the moment."); 
+        } 
+    } 
+ 
+    @Override 
+    public void returnItem() { 
+        isOnShelf = true; 
+        System.out.println(name + " is back on shelf."); 
+    } 
+ 
+    @Override 
+    public boolean isReady() { 
+        return isOnShelf; 
+    } 
+ 
+    public String getName() { 
+        return name; 
+    } 
+ 
+    public String getCreator() { 
+        return creator; 
+    } 
+ 
+    public String getCode() { 
+        return code; 
+    } 
+} 
+ 
